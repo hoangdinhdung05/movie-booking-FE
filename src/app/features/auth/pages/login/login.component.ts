@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService, LoginRequest } from 'src/app/core/services/auth.service';
+import { LoginRequest } from 'src/app/core/models/auth/login.module';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -45,6 +46,4 @@ export class LoginComponent {
       }
     });
   }
-
-
 }

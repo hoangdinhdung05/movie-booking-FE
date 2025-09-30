@@ -2,23 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-
-export interface LoginRequest {
-  username: string;
-  password: string;
-}
-
-export interface BaseResponse<T> {
-  success: boolean;
-  message: string;
-  data: T;
-  timestamp: string;
-}
-
-export interface AuthResponseData {
-  accessToken: string;
-  refreshToken: string;
-}
+import { BaseResponse } from '../models/base-response.module';
+import { LoginRequest } from '../models/auth/login.module';
+import { AuthResponseData } from '../models/auth/auth.module';
+import { RegisterRequest } from '../models/auth/register.module';
 
 @Injectable({
   providedIn: 'root'
@@ -34,4 +21,12 @@ export class AuthService {
       request
     );
   }
+
+  register(request: RegisterRequest): Observable<BaseResponse<any>> {
+    return this.http.post<BaseResponse<any>>(
+      `${this.apiUrl}/register`,
+      request
+    );
+  }
+
 }
