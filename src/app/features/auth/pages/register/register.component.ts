@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/app/core/models/auth/register.module';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -33,7 +33,7 @@ export class RegisterComponent {
     this.authService.register(request).subscribe({
       next: (res) => {
         if (res.success) {
-          this.router.navigate(['/auth/login']);
+          this.router.navigate(['/auth/active']);
         } else {
           this.errorMessage = res.message; // backend trả message
         }

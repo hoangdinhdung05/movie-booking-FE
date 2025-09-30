@@ -1,8 +1,8 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
-import { AuthService } from './services/auth.service';
+import { AuthService } from './auth.service';
+import { OtpService } from '../otp/otp.service';
 
 @NgModule({
   imports: [
@@ -10,7 +10,8 @@ import { AuthService } from './services/auth.service';
     HttpClientModule 
   ],
   providers: [
-    AuthService  
+    AuthService,
+    OtpService  
   ]
 })
 export class CoreModule {
