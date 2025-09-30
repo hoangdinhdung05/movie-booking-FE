@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<!-- app.component.html -->
+<div class="dashboard-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-area">
+    <app-header></app-header>
+    
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    
+    <app-footer></app-footer>
+  </div>
+</div>
