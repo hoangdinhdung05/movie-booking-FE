@@ -6,8 +6,7 @@ import { BaseResponse } from '../../models/base-response.module';
 import { LoginRequest } from '../../models/auth/login.module';
 import { AuthResponseData } from '../../models/auth/auth.module';
 import { RegisterRequest } from '../../models/auth/register.module';
-import { VerifyOtpRequest } from '../../models/otp/verify-otp.module';
-import { ResendOtpRequest } from '../../models/otp/resend-otp.module';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,13 +27,6 @@ export class AuthService {
   register(request: RegisterRequest): Observable<BaseResponse<any>> {
     return this.http.post<BaseResponse<any>>(
       `${this.apiUrl}/register`,
-      request
-    );
-  }
-
-  active(request: VerifyOtpRequest): Observable<BaseResponse<any>> {
-    return this.http.post<BaseResponse<any>>(
-      `${this.apiUrl}/active`, 
       request
     );
   }

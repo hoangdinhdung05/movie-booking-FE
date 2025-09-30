@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ResendOtpRequest } from '../../models/otp/resend-otp.module';
 import { Observable } from 'rxjs';
 import { BaseResponse } from '../../models/base-response.module';
 
@@ -13,11 +12,4 @@ export class OtpService {
   private apiUrl = `${environment.apiUrl}/otp`;
 
   constructor(private http: HttpClient) { }
-
-  resend(request: ResendOtpRequest): Observable<BaseResponse<any>> {
-    return this.http.post<BaseResponse<any>>(
-      `${this.apiUrl}/resend`, 
-      request
-    );
-  }
 }

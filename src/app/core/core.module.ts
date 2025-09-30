@@ -1,8 +1,8 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './auth.service';
-import { OtpService } from '../otp/otp.service';
+import { AuthService } from './services/auth/auth.service';
+import { OtpService } from './services/otp/otp.service';
 
 @NgModule({
   imports: [
